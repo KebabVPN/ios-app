@@ -11,6 +11,9 @@
 		7C45F5382B3CE113001CD4E8 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C45F5372B3CE113001CD4E8 /* ContentView.swift */; };
 		7C45F53A2B3CE114001CD4E8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7C45F5392B3CE114001CD4E8 /* Assets.xcassets */; };
 		7C45F53E2B3CE114001CD4E8 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7C45F53D2B3CE114001CD4E8 /* Preview Assets.xcassets */; };
+		7C45F5462B3DBFE0001CD4E8 /* connector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C45F5452B3DBFE0001CD4E8 /* connector.swift */; };
+		7C45F54B2B3E7052001CD4E8 /* keychain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C45F54A2B3E7052001CD4E8 /* keychain.swift */; };
+		7C45F54F2B3E8EAA001CD4E8 /* message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C45F54E2B3E8EAA001CD4E8 /* message.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +23,9 @@
 		7C45F5392B3CE114001CD4E8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7C45F53B2B3CE114001CD4E8 /* kebab.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = kebab.entitlements; sourceTree = "<group>"; };
 		7C45F53D2B3CE114001CD4E8 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		7C45F5452B3DBFE0001CD4E8 /* connector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = connector.swift; sourceTree = "<group>"; };
+		7C45F54A2B3E7052001CD4E8 /* keychain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = keychain.swift; sourceTree = "<group>"; };
+		7C45F54E2B3E8EAA001CD4E8 /* message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = message.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,6 +58,7 @@
 		7C45F5342B3CE113001CD4E8 /* kebab */ = {
 			isa = PBXGroup;
 			children = (
+				7C45F5442B3DBFA5001CD4E8 /* lib */,
 				7C45F5352B3CE113001CD4E8 /* kebabApp.swift */,
 				7C45F5372B3CE113001CD4E8 /* ContentView.swift */,
 				7C45F5392B3CE114001CD4E8 /* Assets.xcassets */,
@@ -67,6 +74,16 @@
 				7C45F53D2B3CE114001CD4E8 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		7C45F5442B3DBFA5001CD4E8 /* lib */ = {
+			isa = PBXGroup;
+			children = (
+				7C45F5452B3DBFE0001CD4E8 /* connector.swift */,
+				7C45F54A2B3E7052001CD4E8 /* keychain.swift */,
+				7C45F54E2B3E8EAA001CD4E8 /* message.swift */,
+			);
+			path = lib;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -140,6 +157,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				7C45F5382B3CE113001CD4E8 /* ContentView.swift in Sources */,
+				7C45F54B2B3E7052001CD4E8 /* keychain.swift in Sources */,
+				7C45F5462B3DBFE0001CD4E8 /* connector.swift in Sources */,
+				7C45F54F2B3E8EAA001CD4E8 /* message.swift in Sources */,
 				7C45F5362B3CE113001CD4E8 /* kebabApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -265,19 +285,22 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"kebab/Preview Content\"";
+				DEVELOPMENT_TEAM = UWPPLTLD9N;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIRequiredDeviceCapabilities[sdk=*]" = "";
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 13.3;
@@ -301,19 +324,22 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"kebab/Preview Content\"";
+				DEVELOPMENT_TEAM = UWPPLTLD9N;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIRequiredDeviceCapabilities[sdk=*]" = "";
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 13.3;
