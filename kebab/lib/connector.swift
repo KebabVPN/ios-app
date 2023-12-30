@@ -64,7 +64,7 @@ class Connector: ObservableObject {
     }
 
     func initialize() {
-        self.vpnManager.localizedDescription = "Custom KebabVPN"
+        self.vpnManager.localizedDescription = Const.ConnectionName
         self.vpnManager.loadFromPreferences { error in
             if let error = error {
                 print("Failed to load preferences: \(error.localizedDescription)")
@@ -96,7 +96,7 @@ class Connector: ObservableObject {
         p.enablePFS = true
         p.useConfigurationAttributeInternalIPSubnet = false
 
-        p.username = "uaernsme"
+        p.username = "username"
 
         let kcs = KeychainService();
         kcs.save(key: "PASSWORD", value: "P@ssw0rd!")
