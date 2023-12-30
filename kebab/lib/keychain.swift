@@ -31,8 +31,8 @@ class KeychainService: NSObject {
         keychainQuery[kSecClassValue as! NSCopying] = kSecClassGenericPasswordValue
         keychainQuery[kSecAttrGenericValue as! NSCopying] = keyData
         keychainQuery[kSecAttrAccountValue as! NSCopying] = keyData
-        keychainQuery[kSecAttrServiceValue as! NSCopying] = "VPN"
-        keychainQuery[kSecAttrAccessibleValue as! NSCopying] = kSecAttrAccessibleAlwaysThisDeviceOnly
+        keychainQuery[kSecAttrServiceValue as! NSCopying] = Const.ConnectionName
+        keychainQuery[kSecAttrAccessibleValue as! NSCopying] = kSecAttrAccessibleAfterFirstUnlockThisDeviceOnly
         keychainQuery[kSecValueData as! NSCopying] = valueData;
         // Delete any existing items
         SecItemDelete(keychainQuery as CFDictionary)
@@ -40,14 +40,13 @@ class KeychainService: NSObject {
     }
 
     func load(key: String)->Data {
-
         let keyData: Data = key.data(using: String.Encoding(rawValue: String.Encoding.utf8.rawValue), allowLossyConversion: false)!
         let keychainQuery = NSMutableDictionary();
         keychainQuery[kSecClassValue as! NSCopying] = kSecClassGenericPasswordValue
         keychainQuery[kSecAttrGenericValue as! NSCopying] = keyData
         keychainQuery[kSecAttrAccountValue as! NSCopying] = keyData
-        keychainQuery[kSecAttrServiceValue as! NSCopying] = "VPN"
-        keychainQuery[kSecAttrAccessibleValue as! NSCopying] = kSecAttrAccessibleAlwaysThisDeviceOnly
+        keychainQuery[kSecAttrServiceValue as! NSCopying] = Const.ConnectionName
+        keychainQuery[kSecAttrAccessibleValue as! NSCopying] = kSecAttrAccessibleAfterFirstUnlockThisDeviceOnly
         keychainQuery[kSecMatchLimit] = kSecMatchLimitOne
         keychainQuery[kSecReturnPersistentRef] = kCFBooleanTrue
 
@@ -56,8 +55,8 @@ class KeychainService: NSObject {
 
         if status == errSecSuccess {
             if let data = result as! NSData? {
-                if let value = NSString(data: data as Data, encoding: String.Encoding.utf8.rawValue) {
-                }
+//                if let value = NSString(data: data as Data, encoding: String.Encoding.utf8.rawValue) {
+//                }
                 return data as Data;
             }
         }
