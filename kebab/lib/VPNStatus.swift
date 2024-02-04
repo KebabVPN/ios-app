@@ -8,8 +8,8 @@
 import Foundation
 import NetworkExtension
 
-class Message {
-    static func status(code: Int) -> String {
+enum VPNStatus {
+    static func getStatus(code: Int) -> String {
         switch code {
         case NEVPNStatus.invalid.rawValue:
           return "Invalid"
