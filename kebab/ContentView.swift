@@ -20,9 +20,9 @@ struct ContentView: View {
                 .foregroundColor(.accentColor)
 
             if conn.attempts > 0 {
-                Text("\(conn.serverAddress) (\(Message.status(code: conn.status)) - \(conn.attempts)/\(conn.maxAttempts), your IP is: \(conn.ip)")
+                Text("\(conn.serverAddress) (\(VPNStatus.getStatus(code: conn.status)) - \(conn.attempts)/\(conn.maxAttempts), your IP is: \(conn.ip)")
             } else {
-                Text("\(conn.serverAddress) (\(Message.status(code: conn.status))), your IP is: \(conn.ip)")
+                Text("\(conn.serverAddress) (\(VPNStatus.getStatus(code: conn.status))), your IP is: \(conn.ip)")
             }
 
             Button {

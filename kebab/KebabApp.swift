@@ -8,9 +8,9 @@
 import SwiftUI
 
 @main
-struct kebabApp: App {
+struct KebabApp: App {
     init() {
-        Connector.main.initialize()
+        Connector.main.initWithPreferences()
     }
 
     var body: some Scene {

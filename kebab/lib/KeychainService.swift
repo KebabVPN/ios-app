@@ -31,7 +31,7 @@ class KeychainService: NSObject {
         keychainQuery[kSecClassValue as! NSCopying] = kSecClassGenericPasswordValue
         keychainQuery[kSecAttrGenericValue as! NSCopying] = keyData
         keychainQuery[kSecAttrAccountValue as! NSCopying] = keyData
-        keychainQuery[kSecAttrServiceValue as! NSCopying] = Const.ConnectionName
+        keychainQuery[kSecAttrServiceValue as! NSCopying] = Constants.ConnectionName
         keychainQuery[kSecAttrAccessibleValue as! NSCopying] = kSecAttrAccessibleAfterFirstUnlockThisDeviceOnly
         keychainQuery[kSecValueData as! NSCopying] = valueData;
         // Delete any existing items
@@ -45,7 +45,7 @@ class KeychainService: NSObject {
         keychainQuery[kSecClassValue as! NSCopying] = kSecClassGenericPasswordValue
         keychainQuery[kSecAttrGenericValue as! NSCopying] = keyData
         keychainQuery[kSecAttrAccountValue as! NSCopying] = keyData
-        keychainQuery[kSecAttrServiceValue as! NSCopying] = Const.ConnectionName
+        keychainQuery[kSecAttrServiceValue as! NSCopying] = Constants.ConnectionName
         keychainQuery[kSecAttrAccessibleValue as! NSCopying] = kSecAttrAccessibleAfterFirstUnlockThisDeviceOnly
         keychainQuery[kSecMatchLimit] = kSecMatchLimitOne
         keychainQuery[kSecReturnPersistentRef] = kCFBooleanTrue
