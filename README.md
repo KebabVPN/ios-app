@@ -6,8 +6,14 @@ Login screen
 
 Home page
 
-<img src="https://github.com/DobrySiabar/KebabVPN/assets/45755611/8dc0bcf9-3a38-421c-8afc-6609257658ca" width=30%>
+<img src="https://github.com/DobrySiabar/KebabVPN/assets/45755611/8dc0bcf9-3a38-421c-8afc-6609257658cac" width=30%>
 <hr style="border:1px solid gray">
+
+Country picker
+
+<img src="https://github.com/DobrySiabar/KebabVPN/assets/45755611/b2b6a2f4-927a-4d8e-841b-4b8ad87c231b" width=30%>
+<hr style="border:1px solid gray">
+
 
 Attempting to connect
 
