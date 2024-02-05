@@ -24,7 +24,7 @@ enum VPNStatus {
         case NEVPNStatus.disconnecting.rawValue:
           return "Disconnecting"
         default:
-            return "Unknown"
+            return "Not running"
         }
     }
 }

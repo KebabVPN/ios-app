@@ -9,14 +9,18 @@ import SwiftUI
 
 @main
 struct KebabApp: App {
-    init() {
-        Connector.main.initWithPreferences()
-    }
-
     var body: some Scene {
         WindowGroup {
-            ContentView()
-                .environmentObject(Connector.main)
+            initialView()
+                .preferredColorScheme(.dark)
+        }
+    }
+    
+    private func initialView() -> some View {
+        if let userId = UserDefaults.standard.string(forKey: "AppleUserId"), !userId.isEmpty {
+            return AnyView(HomePageView())
+        } else {
+            return AnyView(LoginScreen())
         }
     }
 }

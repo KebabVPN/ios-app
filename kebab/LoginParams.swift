@@ -8,6 +8,6 @@
 import Foundation
 
 struct Params {
-    let username = "username"
-    let password = "simplepassword"
+    let username = "<#username#>"
+    let password = "<#simplepassword#>"
 }

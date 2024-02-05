@@ -5,7 +5,7 @@
 //  Created by Evgeniy Khashin on 28.12.2023.
 //
 
-import Foundation
+import SwiftUI
 import NetworkExtension
 import Security
 
@@ -17,6 +17,14 @@ class Connector: ObservableObject {
     @Published var serverAddress = ""
     @Published var status = -1
     @Published var attempts = 0
+    @Published var vpnStatus: String = "Unknown"
+    @Published var isVPNActive = false
+    @Published var isVPNConnecting = false
+    @Published var isLoading = false
+    @Published var isButtonDisabled = false
+    @Published var shouldShowAttempts = false
+
+    @Published var selectedCountry: Country = .us
 
     let NEVPNStatusVoid = -1
     let maxAttempts = 10
@@ -27,6 +35,7 @@ class Connector: ObservableObject {
     let vpnManager = NEVPNManager.shared()
 
     private init() {
+        initWithPreferences()
         NotificationCenter.default.addObserver(forName: NSNotification.Name.NEVPNStatusDidChange, object: nil , queue: nil) { [self]
            notification in
 
@@ -49,6 +58,18 @@ class Connector: ObservableObject {
             if self.status == NEVPNStatus.disconnected.rawValue || self.status == NEVPNStatus.connected.rawValue {
                  self.updateIP()
             }
+            self.vpnStatus = VPNStatus.getStatus(code: self.status)
+            isVPNActive = (self.status == 3) ? true : false
+            isVPNConnecting = (self.status != 1) ? true : false
+            
+            if self.status == 3 || self.status == 1 {
+                isButtonDisabled = false
+                isLoading = false
+            }
+            
+            if attempts > 1 {
+                shouldShowAttempts = true
+            }
         }
     }
 
@@ -69,11 +90,11 @@ class Connector: ObservableObject {
         }
     }
 
-    func setup(endpoint: String) {
+    func setup(endpoint: Country) {
         let p = NEVPNProtocolIKEv2()
         p.authenticationMethod = .none
-        p.serverAddress = endpoint
-        p.remoteIdentifier = endpoint
+        p.serverAddress = endpoint.getUrl
+        p.remoteIdentifier = endpoint.getUrl
         p.useExtendedAuthentication = true
 
         p.ikeSecurityAssociationParameters.encryptionAlgorithm = .algorithmAES256GCM
