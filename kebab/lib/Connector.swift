@@ -17,7 +17,7 @@ class Connector: ObservableObject {
     @Published var serverAddress = ""
     @Published var status = -1
     @Published var attempts = 0
-    @Published var vpnStatus: String = "Unknown"
+    @Published var vpnStatus: LocalizedStringKey = ""
     @Published var isVPNActive = false
     @Published var isVPNConnecting = false
     @Published var isLoading = false

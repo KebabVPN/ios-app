@@ -1,0 +1,37 @@
+/* 
+  Localizable.strings
+  kebab
+
+  Created by jefferson on 6.02.24.
+  
+*/
+
+// Настройки
+"Change language" = "Изменить язык";
+"Settings" = "Настройки";
+"Subscription" = "Подписка";
+"Referrals" = "Рефералы";
+"Exit" = "Выход";
+
+// Переключатель языка
+"Select a language" = "Выберите язык (Language)";
+"English" = "Английский (English)";
+"Russian" = "Русский";
+"Turkish" = "Турецкий (Türkçe)";
+"Chinese" = "Китайский (中文)";
+
+// Домашняя страница
+"Pick your country:" = "Выберите страну:";
+"Your IP is:" = "Ваш IP-адрес:";
+"Connection attempts" = "Попытки соединения";
+"Stop VPN" = "Остановить VPN";
+"Run VPN" = "Запустить VPN";
+
+// Статусы
+"Invalid" = "Что-то пошло не так";
+"Disconnected" = "Отключено";
+"Connecting" = "Подключение";
+"Connected" = "Подключено";
+"Reasserting" = "Повторное подтверждение";
+"Disconnecting" = "Отключение";
+"Not running" = "Не запущено";

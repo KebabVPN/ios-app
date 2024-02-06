@@ -25,7 +25,6 @@ class LoginViewModel: ObservableObject {
     
     // ASAuthorizationAppleIDProvider.credentialRevokedNotification handler
     @objc func appleIDCredentialRevoked(_ notification: Notification) {
-        print("user id in appleIDCredentialRevoked: \(userIdentifier)")
         appleIDProvider.getCredentialState(forUserID: userIdentifier) { [weak self] (credentialState, error) in
             switch credentialState {
             case .authorized:

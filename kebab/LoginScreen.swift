@@ -7,6 +7,7 @@
 
 import SwiftUI
 import AuthenticationServices
+import LanguageManagerSwiftUI
 
 struct LoginScreen: View {
     @ObservedObject var loginViewModel = LoginViewModel()
@@ -60,7 +61,9 @@ struct LoginScreen: View {
         )
         .padding()
         .fullScreenCover(isPresented: $loginViewModel.isHomePagePresented) {
-            HomePageView()
+            LanguageManagerView(.deviceLanguage) {
+                HomePageView()
+            }
         }
         .onAppear {
             loginViewModel.userIdentifier = (UserDefaults.standard.value(forKey: "AppleUserId") as? String) ?? ""

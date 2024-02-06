@@ -6,13 +6,20 @@
 //
 
 import SwiftUI
+import LanguageManagerSwiftUI
 
 @main
 struct KebabApp: App {
     var body: some Scene {
         WindowGroup {
-            initialView()
+//            initialView()
+//                .preferredColorScheme(.dark)
+            
+            LanguageManagerView(.deviceLanguage) {
+                initialView() //(isLanguageSelectionPresented: .constant(true))
+                .transition(.slide) // The animation that will be happening when the language change.
                 .preferredColorScheme(.dark)
+            }
         }
     }
     

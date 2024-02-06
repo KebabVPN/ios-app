@@ -52,7 +52,11 @@ struct VPNView: View {
                     .imageScale(.large)
                     .foregroundColor(.accentColor)
                 VStack {
-                    Text("Your IP is: \(conn.ip)")
+                    HStack {
+                        Text(LocalizedStringKey("Your IP is:"))
+                        Text("\(conn.ip)")
+                    }
+                    
                     if conn.shouldShowAttempts {
                         Text("Connection attempts: \(conn.attempts)/\(conn.maxAttempts)")
                     } else {
@@ -91,9 +95,6 @@ struct VPNView: View {
             }
         )
         .padding()
-        .onAppear {
-            print("status", conn.status)
-        }
     }
 
 }

@@ -6,13 +6,13 @@
 //
 
 import SwiftUI
-import AuthenticationServices
+import LanguageManagerSwiftUI
 
 struct MenuView: View {
     @Binding var isLanguageSelectionPresented: Bool
     @State var isModalPresented: Bool = false
     
-    @State var tag:Int? = nil
+    @State var tag: Int? = nil
 
     var body: some View {
         HStack {
@@ -62,28 +62,36 @@ struct MenuView: View {
 }
 
 struct LanguageSelectionView: View {
-    private enum Language: String, CaseIterable, Identifiable {
-        case eng = "English"
-        case rus = "Russian"
-        case tur = "Turkish"
-        case chi = "Chinese"
-
-        var id: Self { self }
-    }
-    
-    @State private var selectedLanguage: Language = .eng
+    @EnvironmentObject var languageSettings: LanguageSettings
     
     var body: some View {
         VStack {
-            Text("Choose language")
+            Text("Select a language")
                 .frame(height: 50)
-            List {
-                Picker("Language", selection: $selectedLanguage) {
-                    ForEach(Language.allCases) { language in
-                        Text(language.rawValue.capitalized)
+            VStack {
+                Button("English") {
+                    withAnimation {
+                        languageSettings.selectedLanguage = .en
+                    }
+                }
+                Button("Russian") {
+                    withAnimation {
+                        languageSettings.selectedLanguage = .ru
+                    }
+                }
+                Button("Turkish") {
+                    withAnimation {
+                        languageSettings.selectedLanguage = .tr
+                    }
+                }
+                Button("Chinese") {
+                    withAnimation {
+                        languageSettings.selectedLanguage = .zhHans
                     }
                 }
             }
+            .buttonStyle(LanguageButtonStyle())
+            Spacer()
         }
     }
 }
