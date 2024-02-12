@@ -7,6 +7,6 @@
 
 import Foundation
 
-enum Constants {
+class Const {
     static let ConnectionName = "KebabVPN"
 }

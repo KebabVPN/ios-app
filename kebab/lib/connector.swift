@@ -5,7 +5,7 @@
 //  Created by Evgeniy Khashin on 28.12.2023.
 //
 
-import SwiftUI
+import Foundation
 import NetworkExtension
 import Security
 
@@ -17,25 +17,14 @@ class Connector: ObservableObject {
     @Published var serverAddress = ""
     @Published var status = -1
     @Published var attempts = 0
-    @Published var vpnStatus: LocalizedStringKey = ""
-    @Published var isVPNActive = false
-    @Published var isVPNConnecting = false
-    @Published var isLoading = false
-    @Published var isButtonDisabled = false
-    @Published var shouldShowAttempts = false
-
-    @Published var selectedCountry: Country = .us
 
     let NEVPNStatusVoid = -1
     let maxAttempts = 10
     var nextAction = -1
-    
-    let params = Params()
 
     let vpnManager = NEVPNManager.shared()
 
-    private init() {
-        initWithPreferences()
+    init() {
         NotificationCenter.default.addObserver(forName: NSNotification.Name.NEVPNStatusDidChange, object: nil , queue: nil) { [self]
            notification in
 
@@ -56,33 +45,26 @@ class Connector: ObservableObject {
                 }
             }
             if self.status == NEVPNStatus.disconnected.rawValue || self.status == NEVPNStatus.connected.rawValue {
-                 self.updateIP()
-            }
-            self.vpnStatus = VPNStatus.getStatus(code: self.status)
-            isVPNActive = (self.status == 3) ? true : false
-            isVPNConnecting = (self.status != 1) ? true : false
-            
-            if self.status == 3 || self.status == 1 {
-                isButtonDisabled = false
-                isLoading = false
-            }
-            
-            if attempts > 1 {
-                shouldShowAttempts = true
+                DispatchQueue.global(qos: .userInteractive).async {
+                    do {
+                        try self.updateIP()
+                    } catch {
+                        print("Error getting IP");
+                    }
+                }
+
             }
         }
     }
 
     func updateIP() {
         URLSession.shared.dataTask(with: self.IPurl) { data, response, error in
-            DispatchQueue.main.async {
-                self.ip = NSString(data: data!, encoding: NSUTF8StringEncoding)! as String
-            }
+            self.ip = NSString(data: data!, encoding: NSUTF8StringEncoding)! as String
         }.resume()
     }
 
-    func initWithPreferences() {
-        self.vpnManager.localizedDescription = Constants.ConnectionName
+    func initialize() {
+        self.vpnManager.localizedDescription = Const.ConnectionName
         self.vpnManager.loadFromPreferences { error in
             if let error = error {
                 print("Failed to load preferences: \(error.localizedDescription)")
@@ -90,11 +72,11 @@ class Connector: ObservableObject {
         }
     }
 
-    func setup(endpoint: Country) {
+    func setup(endpoint: String) {
         let p = NEVPNProtocolIKEv2()
         p.authenticationMethod = .none
-        p.serverAddress = endpoint.getUrl
-        p.remoteIdentifier = endpoint.getUrl
+        p.serverAddress = endpoint
+        p.remoteIdentifier = endpoint
         p.useExtendedAuthentication = true
 
         p.ikeSecurityAssociationParameters.encryptionAlgorithm = .algorithmAES256GCM
@@ -114,11 +96,10 @@ class Connector: ObservableObject {
         p.enablePFS = true
         p.useConfigurationAttributeInternalIPSubnet = false
 
-        p.username = params.username
-        let passw = params.password
-        
+        p.username = "username"
+
         let kcs = KeychainService();
-        kcs.save(key: "PASSWORD", value: passw)
+        kcs.save(key: "PASSWORD", value: "P@ssw0rd!")
 
         p.passwordReference = kcs.load(key: "PASSWORD")
 
@@ -137,7 +118,7 @@ class Connector: ObservableObject {
                 self.nextAction = NEVPNStatus.connected.rawValue
                 self.connect()
             }
-            self.initWithPreferences()
+            self.initialize()
         }
     }
 
