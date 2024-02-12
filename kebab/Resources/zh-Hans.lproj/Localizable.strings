@@ -1,0 +1,38 @@
+/* 
+  Localizable.strings
+  kebab
+
+  Created by jefferson on 6.02.24.
+  
+*/
+
+// 设置
+"Change language" = "更改语言 (Language)";
+"Settings" = "设置";
+"Subscription" = "订阅";
+"Referrals" = "推荐";
+"Exit" = "退出";
+
+// 语言切换器
+"Select a language" = "选择语言 (Language)";
+"Language" = "语言 (Language)";
+"English" = "英语 (English)";
+"Russian" = "俄语 (Руссский)";
+"Turkish" = "土耳其语 (Türkçe)";
+"Chinese" = "中文";
+
+// 主页
+"Pick your country:" = "选择您的国家:";
+"Your IP is:" = "您的 IP 地址:";
+"Connection attempts" = "连接尝试";
+"Stop VPN" = "停止 VPN";
+"Run VPN" = "运行 VPN";
+
+// 状态
+"Invalid" = "无效";
+"Disconnected" = "断开连接";
+"Connecting" = "连接中";
+"Connected" = "已连接";
+"Reasserting" = "重新确认中";
+"Disconnecting" = "正在断开连接";
+"Not running" = "未运行";

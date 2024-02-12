@@ -7,28 +7,52 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		7C45F5362B3CE113001CD4E8 /* kebabApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C45F5352B3CE113001CD4E8 /* kebabApp.swift */; };
-		7C45F5382B3CE113001CD4E8 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C45F5372B3CE113001CD4E8 /* ContentView.swift */; };
+		7C45F5362B3CE113001CD4E8 /* KebabApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C45F5352B3CE113001CD4E8 /* KebabApp.swift */; };
 		7C45F53E2B3CE114001CD4E8 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7C45F53D2B3CE114001CD4E8 /* Preview Assets.xcassets */; };
-		7C45F5462B3DBFE0001CD4E8 /* connector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C45F5452B3DBFE0001CD4E8 /* connector.swift */; };
-		7C45F54B2B3E7052001CD4E8 /* keychain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C45F54A2B3E7052001CD4E8 /* keychain.swift */; };
-		7C45F54F2B3E8EAA001CD4E8 /* message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C45F54E2B3E8EAA001CD4E8 /* message.swift */; };
-		7C6AD6B72B3FC740008619C0 /* constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C6AD6B62B3FC740008619C0 /* constants.swift */; };
+		7C45F5462B3DBFE0001CD4E8 /* Connector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C45F5452B3DBFE0001CD4E8 /* Connector.swift */; };
+		7C45F54B2B3E7052001CD4E8 /* KeychainService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C45F54A2B3E7052001CD4E8 /* KeychainService.swift */; };
+		7C45F54F2B3E8EAA001CD4E8 /* VPNStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C45F54E2B3E8EAA001CD4E8 /* VPNStatus.swift */; };
+		7C6AD6B72B3FC740008619C0 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C6AD6B62B3FC740008619C0 /* Constants.swift */; };
 		7C7A352C2B4049AA00ADAB61 /* assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7C7A352B2B4049AA00ADAB61 /* assets.xcassets */; };
+		842F9CE52B7278CB00256B89 /* LanguageManagerSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 842F9CE42B7278CB00256B89 /* LanguageManagerSwiftUI */; };
+		842F9CEB2B727A1D00256B89 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 842F9CED2B727A1D00256B89 /* Localizable.strings */; };
+		84671F0C2B6FA25400B8EF88 /* LoginParams.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84671F0B2B6FA25400B8EF88 /* LoginParams.swift */; };
+		846746CE2B7293E900CD8033 /* LanguageButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846746CD2B7293E900CD8033 /* LanguageButtonStyle.swift */; };
+		84BFF8182B70022000F2160C /* LoginScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84BFF8102B70021F00F2160C /* LoginScreen.swift */; };
+		84BFF8192B70022000F2160C /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84BFF8112B70021F00F2160C /* MenuView.swift */; };
+		84BFF81A2B70022000F2160C /* VPNManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84BFF8122B70021F00F2160C /* VPNManager.swift */; };
+		84BFF81B2B70022000F2160C /* VPNView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84BFF8132B70021F00F2160C /* VPNView.swift */; };
+		84BFF81C2B70022000F2160C /* HomePageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84BFF8142B70021F00F2160C /* HomePageView.swift */; };
+		84BFF81E2B70022000F2160C /* LoaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84BFF8162B70022000F2160C /* LoaderView.swift */; };
+		84BFF81F2B70022000F2160C /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84BFF8172B70022000F2160C /* String+Extensions.swift */; };
+		84BFF8212B70161800F2160C /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84BFF8202B70161800F2160C /* LoginViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		7C45F5322B3CE113001CD4E8 /* kebab.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = kebab.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		7C45F5352B3CE113001CD4E8 /* kebabApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = kebabApp.swift; sourceTree = "<group>"; };
-		7C45F5372B3CE113001CD4E8 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		7C45F5352B3CE113001CD4E8 /* KebabApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KebabApp.swift; sourceTree = "<group>"; };
 		7C45F53B2B3CE114001CD4E8 /* kebab.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = kebab.entitlements; sourceTree = "<group>"; };
 		7C45F53D2B3CE114001CD4E8 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		7C45F5452B3DBFE0001CD4E8 /* connector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = connector.swift; sourceTree = "<group>"; };
-		7C45F54A2B3E7052001CD4E8 /* keychain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = keychain.swift; sourceTree = "<group>"; };
-		7C45F54E2B3E8EAA001CD4E8 /* message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = message.swift; sourceTree = "<group>"; };
-		7C6AD6B62B3FC740008619C0 /* constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = constants.swift; sourceTree = "<group>"; };
+		7C45F5452B3DBFE0001CD4E8 /* Connector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Connector.swift; sourceTree = "<group>"; };
+		7C45F54A2B3E7052001CD4E8 /* KeychainService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainService.swift; sourceTree = "<group>"; };
+		7C45F54E2B3E8EAA001CD4E8 /* VPNStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VPNStatus.swift; sourceTree = "<group>"; };
+		7C6AD6B62B3FC740008619C0 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		7C7A352B2B4049AA00ADAB61 /* assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = assets.xcassets; sourceTree = "<group>"; };
 		7CFBA0D02B4095180066B6BB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		842F9CEC2B727A1D00256B89 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		84464D702B728AB400747977 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
+		84464D712B728AB600747977 /* tr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = tr; path = tr.lproj/Localizable.strings; sourceTree = "<group>"; };
+		84464D722B728AC100747977 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		84671F0B2B6FA25400B8EF88 /* LoginParams.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginParams.swift; sourceTree = "<group>"; };
+		846746CD2B7293E900CD8033 /* LanguageButtonStyle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LanguageButtonStyle.swift; sourceTree = "<group>"; };
+		84BFF8102B70021F00F2160C /* LoginScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginScreen.swift; sourceTree = "<group>"; };
+		84BFF8112B70021F00F2160C /* MenuView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
+		84BFF8122B70021F00F2160C /* VPNManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VPNManager.swift; sourceTree = "<group>"; };
+		84BFF8132B70021F00F2160C /* VPNView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VPNView.swift; sourceTree = "<group>"; };
+		84BFF8142B70021F00F2160C /* HomePageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomePageView.swift; sourceTree = "<group>"; };
+		84BFF8162B70022000F2160C /* LoaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoaderView.swift; sourceTree = "<group>"; };
+		84BFF8172B70022000F2160C /* String+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
+		84BFF8202B70161800F2160C /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -36,6 +60,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				842F9CE52B7278CB00256B89 /* LanguageManagerSwiftUI in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -63,8 +88,18 @@
 			children = (
 				7CFBA0D02B4095180066B6BB /* Info.plist */,
 				7C45F5442B3DBFA5001CD4E8 /* lib */,
-				7C45F5352B3CE113001CD4E8 /* kebabApp.swift */,
-				7C45F5372B3CE113001CD4E8 /* ContentView.swift */,
+				7C45F5352B3CE113001CD4E8 /* KebabApp.swift */,
+				84BFF8102B70021F00F2160C /* LoginScreen.swift */,
+				84BFF8202B70161800F2160C /* LoginViewModel.swift */,
+				84671F0B2B6FA25400B8EF88 /* LoginParams.swift */,
+				84BFF8142B70021F00F2160C /* HomePageView.swift */,
+				84BFF8162B70022000F2160C /* LoaderView.swift */,
+				84BFF8112B70021F00F2160C /* MenuView.swift */,
+				84BFF8172B70022000F2160C /* String+Extensions.swift */,
+				84BFF8122B70021F00F2160C /* VPNManager.swift */,
+				84BFF8132B70021F00F2160C /* VPNView.swift */,
+				846746CD2B7293E900CD8033 /* LanguageButtonStyle.swift */,
+				842F9CE62B72797200256B89 /* Resources */,
 				7C45F53B2B3CE114001CD4E8 /* kebab.entitlements */,
 				7C45F53C2B3CE114001CD4E8 /* Preview Content */,
 				7C7A352B2B4049AA00ADAB61 /* assets.xcassets */,
@@ -83,12 +118,20 @@
 		7C45F5442B3DBFA5001CD4E8 /* lib */ = {
 			isa = PBXGroup;
 			children = (
-				7C45F5452B3DBFE0001CD4E8 /* connector.swift */,
-				7C45F54A2B3E7052001CD4E8 /* keychain.swift */,
-				7C45F54E2B3E8EAA001CD4E8 /* message.swift */,
-				7C6AD6B62B3FC740008619C0 /* constants.swift */,
+				7C45F5452B3DBFE0001CD4E8 /* Connector.swift */,
+				7C45F54A2B3E7052001CD4E8 /* KeychainService.swift */,
+				7C45F54E2B3E8EAA001CD4E8 /* VPNStatus.swift */,
+				7C6AD6B62B3FC740008619C0 /* Constants.swift */,
 			);
 			path = lib;
+			sourceTree = "<group>";
+		};
+		842F9CE62B72797200256B89 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				842F9CED2B727A1D00256B89 /* Localizable.strings */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -107,6 +150,9 @@
 			dependencies = (
 			);
 			name = kebab;
+			packageProductDependencies = (
+				842F9CE42B7278CB00256B89 /* LanguageManagerSwiftUI */,
+			);
 			productName = kebab;
 			productReference = 7C45F5322B3CE113001CD4E8 /* kebab.app */;
 			productType = "com.apple.product-type.application";
@@ -119,7 +165,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1430;
-				LastUpgradeCheck = 1510;
+				LastUpgradeCheck = 1520;
 				TargetAttributes = {
 					7C45F5312B3CE113001CD4E8 = {
 						CreatedOnToolsVersion = 14.3.1;
@@ -133,8 +179,14 @@
 			knownRegions = (
 				en,
 				Base,
+				ru,
+				tr,
+				"zh-Hans",
 			);
 			mainGroup = 7C45F5292B3CE113001CD4E8;
+			packageReferences = (
+				842F9CE32B7278CA00256B89 /* XCRemoteSwiftPackageReference "LanguageManager-SwiftUI" */,
+			);
 			productRefGroup = 7C45F5332B3CE113001CD4E8 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -150,6 +202,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7C7A352C2B4049AA00ADAB61 /* assets.xcassets in Resources */,
+				842F9CEB2B727A1D00256B89 /* Localizable.strings in Resources */,
 				7C45F53E2B3CE114001CD4E8 /* Preview Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -161,16 +214,39 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7C45F5382B3CE113001CD4E8 /* ContentView.swift in Sources */,
-				7C45F54B2B3E7052001CD4E8 /* keychain.swift in Sources */,
-				7C45F5462B3DBFE0001CD4E8 /* connector.swift in Sources */,
-				7C45F54F2B3E8EAA001CD4E8 /* message.swift in Sources */,
-				7C45F5362B3CE113001CD4E8 /* kebabApp.swift in Sources */,
-				7C6AD6B72B3FC740008619C0 /* constants.swift in Sources */,
+				7C45F54B2B3E7052001CD4E8 /* KeychainService.swift in Sources */,
+				84BFF81A2B70022000F2160C /* VPNManager.swift in Sources */,
+				84BFF81E2B70022000F2160C /* LoaderView.swift in Sources */,
+				84671F0C2B6FA25400B8EF88 /* LoginParams.swift in Sources */,
+				7C45F5462B3DBFE0001CD4E8 /* Connector.swift in Sources */,
+				84BFF8192B70022000F2160C /* MenuView.swift in Sources */,
+				7C45F54F2B3E8EAA001CD4E8 /* VPNStatus.swift in Sources */,
+				84BFF8212B70161800F2160C /* LoginViewModel.swift in Sources */,
+				84BFF81B2B70022000F2160C /* VPNView.swift in Sources */,
+				846746CE2B7293E900CD8033 /* LanguageButtonStyle.swift in Sources */,
+				84BFF81F2B70022000F2160C /* String+Extensions.swift in Sources */,
+				84BFF8182B70022000F2160C /* LoginScreen.swift in Sources */,
+				7C45F5362B3CE113001CD4E8 /* KebabApp.swift in Sources */,
+				84BFF81C2B70022000F2160C /* HomePageView.swift in Sources */,
+				7C6AD6B72B3FC740008619C0 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		842F9CED2B727A1D00256B89 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				842F9CEC2B727A1D00256B89 /* en */,
+				84464D702B728AB400747977 /* ru */,
+				84464D712B728AB600747977 /* tr */,
+				84464D722B728AC100747977 /* zh-Hans */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		7C45F53F2B3CE114001CD4E8 /* Debug */ = {
@@ -178,6 +254,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -240,6 +317,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -413,6 +491,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		842F9CE32B7278CA00256B89 /* XCRemoteSwiftPackageReference "LanguageManager-SwiftUI" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Abedalkareem/LanguageManager-SwiftUI";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.0.6;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		842F9CE42B7278CB00256B89 /* LanguageManagerSwiftUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 842F9CE32B7278CA00256B89 /* XCRemoteSwiftPackageReference "LanguageManager-SwiftUI" */;
+			productName = LanguageManagerSwiftUI;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 7C45F52A2B3CE113001CD4E8 /* Project object */;
 }

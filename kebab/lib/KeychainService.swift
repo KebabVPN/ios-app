@@ -23,7 +23,7 @@ let kSecAttrGenericValue = kSecAttrGeneric as CFString
 let kSecAttrAccessibleValue = kSecAttrAccessible as CFString
 
 class KeychainService: NSObject {
-    func save(key:String, value:String) {
+    func save(key: String, value: String) {
         let keyData: Data = key.data(using: String.Encoding(rawValue: String.Encoding.utf8.rawValue), allowLossyConversion: false)!
         let valueData: Data = value.data(using: String.Encoding(rawValue: String.Encoding.utf8.rawValue), allowLossyConversion: false)!
 
@@ -31,7 +31,7 @@ class KeychainService: NSObject {
         keychainQuery[kSecClassValue as! NSCopying] = kSecClassGenericPasswordValue
         keychainQuery[kSecAttrGenericValue as! NSCopying] = keyData
         keychainQuery[kSecAttrAccountValue as! NSCopying] = keyData
-        keychainQuery[kSecAttrServiceValue as! NSCopying] = Const.ConnectionName
+        keychainQuery[kSecAttrServiceValue as! NSCopying] = Constants.ConnectionName
         keychainQuery[kSecAttrAccessibleValue as! NSCopying] = kSecAttrAccessibleAfterFirstUnlockThisDeviceOnly
         keychainQuery[kSecValueData as! NSCopying] = valueData;
         // Delete any existing items
@@ -39,13 +39,13 @@ class KeychainService: NSObject {
         SecItemAdd(keychainQuery as CFDictionary, nil)
     }
 
-    func load(key: String)->Data {
+    func load(key: String) -> Data {
         let keyData: Data = key.data(using: String.Encoding(rawValue: String.Encoding.utf8.rawValue), allowLossyConversion: false)!
         let keychainQuery = NSMutableDictionary();
         keychainQuery[kSecClassValue as! NSCopying] = kSecClassGenericPasswordValue
         keychainQuery[kSecAttrGenericValue as! NSCopying] = keyData
         keychainQuery[kSecAttrAccountValue as! NSCopying] = keyData
-        keychainQuery[kSecAttrServiceValue as! NSCopying] = Const.ConnectionName
+        keychainQuery[kSecAttrServiceValue as! NSCopying] = Constants.ConnectionName
         keychainQuery[kSecAttrAccessibleValue as! NSCopying] = kSecAttrAccessibleAfterFirstUnlockThisDeviceOnly
         keychainQuery[kSecMatchLimit] = kSecMatchLimitOne
         keychainQuery[kSecReturnPersistentRef] = kCFBooleanTrue
