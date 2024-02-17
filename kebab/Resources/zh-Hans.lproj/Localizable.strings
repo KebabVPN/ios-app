@@ -24,7 +24,7 @@
 // 主页
 "Pick your country:" = "选择您的国家:";
 "Your IP is:" = "您的 IP 地址:";
-"Connection attempts" = "连接尝试";
+"Connection attempts:" = "连接尝试:";
 "Stop VPN" = "停止 VPN";
 "Run VPN" = "运行 VPN";
 

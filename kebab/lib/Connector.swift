@@ -23,6 +23,7 @@ class Connector: ObservableObject {
     @Published var isLoading = false
     @Published var isButtonDisabled = false
     @Published var shouldShowAttempts = false
+    @Published var isForceStop = false
 
     @Published var selectedCountry: Country = .us
 
@@ -38,7 +39,8 @@ class Connector: ObservableObject {
         initWithPreferences()
         NotificationCenter.default.addObserver(forName: NSNotification.Name.NEVPNStatusDidChange, object: nil , queue: nil) { [self]
            notification in
-
+            print("VPN status: \(vpnManager.connection.status.rawValue), next action: \(nextAction)")
+            
             self.status = self.vpnManager.connection.status.rawValue
             self.serverAddress = self.vpnManager.protocolConfiguration?.serverAddress ?? "Unknown"
             if self.nextAction == NEVPNStatus.connected.rawValue && self.status == NEVPNStatus.connected.rawValue {
@@ -46,6 +48,7 @@ class Connector: ObservableObject {
             }
             if self.nextAction == NEVPNStatus.connected.rawValue && self.status == NEVPNStatus.disconnected.rawValue {
                 self.attempts += 1
+                
                 if attempts < maxAttempts {
                     DispatchQueue.global(qos: .userInteractive).async {
                         self.connect()
@@ -62,14 +65,30 @@ class Connector: ObservableObject {
             isVPNActive = (self.status == 3) ? true : false
             isVPNConnecting = (self.status != 1) ? true : false
             
-            if self.status == 3 || self.status == 1 {
+            if self.status == 3 || self.status == 1,
+               attempts < 1 {
                 isButtonDisabled = false
                 isLoading = false
+//                nextAction = NEVPNStatusVoid
+//                attempts = 0
             }
             
-            if attempts > 1 {
+            if attempts > 0 {
                 shouldShowAttempts = true
             }
+            
+            if nextAction == -1 {
+                isButtonDisabled = false
+                isLoading = false
+                attempts = 0
+                shouldShowAttempts = false
+            }
+            
+            if status == 2, attempts > 0 {
+                isButtonDisabled = false
+            }
+            
+            
         }
     }
 

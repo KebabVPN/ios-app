@@ -91,7 +91,6 @@
 				7C45F5352B3CE113001CD4E8 /* KebabApp.swift */,
 				84BFF8102B70021F00F2160C /* LoginScreen.swift */,
 				84BFF8202B70161800F2160C /* LoginViewModel.swift */,
-				84671F0B2B6FA25400B8EF88 /* LoginParams.swift */,
 				84BFF8142B70021F00F2160C /* HomePageView.swift */,
 				84BFF8162B70022000F2160C /* LoaderView.swift */,
 				84BFF8112B70021F00F2160C /* MenuView.swift */,
@@ -122,6 +121,7 @@
 				7C45F54A2B3E7052001CD4E8 /* KeychainService.swift */,
 				7C45F54E2B3E8EAA001CD4E8 /* VPNStatus.swift */,
 				7C6AD6B62B3FC740008619C0 /* Constants.swift */,
+				84671F0B2B6FA25400B8EF88 /* LoginParams.swift */,
 			);
 			path = lib;
 			sourceTree = "<group>";

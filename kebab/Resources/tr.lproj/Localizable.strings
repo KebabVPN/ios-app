@@ -24,7 +24,7 @@
 // Ana sayfa
 "Pick your country:" = "Ülkenizi seçin:";
 "Your IP is:" = "IP adresiniz:";
-"Connection attempts" = "Bağlantı denemeleri";
+"Connection attempts:" = "Bağlantı denemeleri:";
 "Stop VPN" = "VPN'yi Durdur";
 "Run VPN" = "VPN'yi Başlat";
 

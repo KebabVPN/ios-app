@@ -23,7 +23,7 @@
 // Домашняя страница
 "Pick your country:" = "Выберите страну:";
 "Your IP is:" = "Ваш IP-адрес:";
-"Connection attempts" = "Попытки соединения";
+"Connection attempts:" = "Попытки соединения:";
 "Stop VPN" = "Остановить VPN";
 "Run VPN" = "Запустить VPN";
 

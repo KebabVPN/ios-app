@@ -11,20 +11,12 @@ import LanguageManagerSwiftUI
 @main
 struct KebabApp: App {
     var body: some Scene {
-        WindowGroup {
+        WindowGroup {            
             LanguageManagerView(.deviceLanguage) {
-                initialView()
+                LoginScreen()
                 .transition(.slide)
                 .preferredColorScheme(.dark)
             }
-        }
-    }
-    
-    private func initialView() -> some View {
-        if let userId = UserDefaults.standard.string(forKey: "AppleUserId"), !userId.isEmpty {
-            return AnyView(HomePageView())
-        } else {
-            return AnyView(LoginScreen())
         }
     }
 }

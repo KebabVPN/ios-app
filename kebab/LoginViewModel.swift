@@ -10,7 +10,7 @@ import AuthenticationServices
 
 class LoginViewModel: ObservableObject {
     @Published var isLoading = false
-    @Published var isHomePagePresented = false
+    @Published var isSpinning = false
     @Published var userId: String = ""
     
     var userIdentifier: String = ""

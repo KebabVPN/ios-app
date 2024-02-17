@@ -23,7 +23,7 @@
 // Home page
 "Pick your country:" = "Pick your country:";
 "Your IP is:" = "Your IP is:";
-"Connection attempts" = "Connection attempts";
+"Connection attempts:" = "Connection attempts";
 "Stop VPN" = "Stop VPN";
 "Run VPN" = "Run VPN";
 

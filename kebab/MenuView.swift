@@ -11,9 +11,15 @@ import LanguageManagerSwiftUI
 struct MenuView: View {
     @Binding var isLanguageSelectionPresented: Bool
     @State var isModalPresented: Bool = false
-    
     @State var tag: Int? = nil
-
+    
+    @ObservedObject var loginViewModel: LoginViewModel
+    
+    init(isLanguageSelectionPresented: Binding<Bool>, loginViewModel: LoginViewModel) {
+        self._isLanguageSelectionPresented = isLanguageSelectionPresented
+        self.loginViewModel = loginViewModel
+    }
+    
     var body: some View {
         HStack {
             VStack {
@@ -24,6 +30,13 @@ struct MenuView: View {
                     }
                     .sheet(isPresented: $isModalPresented) {
                         LanguageSelectionView()
+                            .frame(
+                                minWidth: 350,
+                                idealWidth: 500,
+                                maxWidth: .infinity,
+                                minHeight: 200,
+                                idealHeight: 400,
+                                maxHeight: .infinity)
                     }
                     
                     Button(action: { }) {
@@ -37,22 +50,21 @@ struct MenuView: View {
                     }
                 }
                 .navigationTitle("Settings")
-                .navigationBarTitleDisplayMode(.large)
                 .padding()
                 
                 Spacer()
                 ZStack {
-                    NavigationLink(destination: LoginScreen().navigationBarBackButtonHidden(true), tag: 1, selection: $tag) { EmptyView() }
                     Button(action: {
                         UserDefaults.standard.removeObject(forKey: "AppleUserId")
                         self.tag = 1
+                        loginViewModel.isLoading = false
                     }, label: {
                         Text("Exit")
                             .bold()
                     })
                     .padding()
-                    .foregroundColor(.red)
                 }
+                .buttonStyle(ExitButtonStyle())
             }
             Spacer()
         }
@@ -96,6 +108,15 @@ struct LanguageSelectionView: View {
     }
 }
 
+struct ExitButtonStyle: ButtonStyle {
+    @ObservedObject var conn: Connector = Connector.main
+    
+    func makeBody(configuration: Self.Configuration) -> some View {
+        configuration.label
+            .foregroundColor(.red)
+    }
+}
+
 #Preview {
-    MenuView(isLanguageSelectionPresented: .constant(false))
+    MenuView(isLanguageSelectionPresented: .constant(false), loginViewModel: LoginViewModel())
 }

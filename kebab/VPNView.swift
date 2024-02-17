@@ -58,7 +58,10 @@ struct VPNView: View {
                     }
                     
                     if conn.shouldShowAttempts {
-                        Text("Connection attempts: \(conn.attempts)/\(conn.maxAttempts)")
+                        HStack {
+                            Text(LocalizedStringKey("Connection attempts:"))
+                            Text("\(conn.attempts)/\(conn.maxAttempts)")
+                        }
                     } else {
                         EmptyView()
                     }
@@ -76,14 +79,15 @@ struct VPNView: View {
                 conn.shouldShowAttempts = false
                 conn.isLoading = true
                 conn.isButtonDisabled = true
+
                 conn.isVPNActive ? conn.disconnect() : conn.setup(endpoint: conn.selectedCountry)
+                
             }) {
                 Text(conn.isVPNConnecting ? "Stop VPN" : "Run VPN")
                     .padding()
-                    .foregroundColor(.white)
-                    .background(conn.isVPNConnecting ? Color.red : Color.green)
-                    .cornerRadius(10)
+                    
             }
+            .buttonStyle(RunButtonStyle())
             .disabled(conn.isButtonDisabled ? true : false)
             .padding()
         }
@@ -96,7 +100,17 @@ struct VPNView: View {
         )
         .padding()
     }
+}
 
+struct RunButtonStyle: ButtonStyle {
+    @ObservedObject var conn: Connector = Connector.main
+    
+    func makeBody(configuration: Self.Configuration) -> some View {
+        configuration.label
+            .foregroundColor(.white)
+            .background(conn.isVPNConnecting ? Color.red : Color.green)
+            .cornerRadius(10)
+    }
 }
 
 #Preview {
